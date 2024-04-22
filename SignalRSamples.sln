@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_SignalRSelfFrame", "NetFramework\SignalRSelfFrame\01_SignalRSelfFrame.csproj", "{095829AF-93A7-4D18-81FA-E8860E63BF47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_SignalRSelfCore", "NetCore\02_SignalRSelfCore.csproj", "{669D62B4-FC4F-4178-85E5-5D29CB906428}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_AzureSignalR_Default", "AzureSignalR\03_AzureSignalR_Default.csproj", "{A563E9AE-AA4F-49E4-A164-A473053B6A09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_ServerlessSignalR", "ServerlessSignalR\csharp\04_ServerlessSignalR.csproj", "{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_MessagePublisher", "ManagementSDK\05_MessagePublisher.csproj", "{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{095829AF-93A7-4D18-81FA-E8860E63BF47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095829AF-93A7-4D18-81FA-E8860E63BF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095829AF-93A7-4D18-81FA-E8860E63BF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095829AF-93A7-4D18-81FA-E8860E63BF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{669D62B4-FC4F-4178-85E5-5D29CB906428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{669D62B4-FC4F-4178-85E5-5D29CB906428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{669D62B4-FC4F-4178-85E5-5D29CB906428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{669D62B4-FC4F-4178-85E5-5D29CB906428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9917181-C2C1-42E2-9594-A72A2FD48450}
+	EndGlobalSection
+EndGlobal
