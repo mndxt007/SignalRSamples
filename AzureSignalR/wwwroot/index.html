@@ -22,6 +22,12 @@
     <script type="text/javascript" src="lib/signalr.min.js"></script>
     <!--Add script to update the page and send messages.-->
     <script type="text/javascript">
+        function getRandomDelay() {
+            function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            return getRandom(1000, 2000);
+        }
         document.addEventListener('DOMContentLoaded', function () {
 
             var messageInput = document.getElementById('message');
@@ -34,7 +40,12 @@
             // Start the connection.
             var connection = new signalR.HubConnectionBuilder()
                 .withUrl('/chat')
-        .configureLogging(signalR.LogLevel.Debug)
+                .configureLogging(signalR.LogLevel.Debug)
+        .withAutomaticReconnect({
+            nextRetryDelayInMilliseconds: function (retryContext) {
+                return getRandomDelay();
+            }
+        })
       //  withUrl('/chat', signalR.HttpTransportType.ServerSentEvents)
                                 .build();
 

@@ -11,8 +11,8 @@ namespace Microsoft.Azure.SignalR.Samples.Management
 {
     public class MessagePublisher
     {
-        private const string Target = "Target";
-        private const string HubName = "simplechat";
+        private const string Target = "broadcastMessage";
+        private const string HubName = "chathub";
         private readonly string _connectionString;
         private readonly ServiceTransportType _serviceTransportType;
         private ServiceHubContext _hubContext;
@@ -56,19 +56,19 @@ namespace Microsoft.Azure.SignalR.Samples.Management
             switch (command)
             {
                 case "broadcast":
-                    return _hubContext.Clients.All.SendAsync(Target, message);
+                    return _hubContext.Clients.All.SendAsync(Target, "publisher", message) ;
                 case "user":
                     var userId = receiver;
-                    return _hubContext.Clients.User(userId).SendAsync(Target, message);
+                    return _hubContext.Clients.User(userId).SendAsync(Target, "publisher", message);
                 case "users":
                     var userIds = receiver.Split(',');
-                    return _hubContext.Clients.Users(userIds).SendAsync(Target, message);
+                    return _hubContext.Clients.Users(userIds).SendAsync(Target, "publisher", message);
                 case "group":
                     var groupName = receiver;
-                    return _hubContext.Clients.Group(groupName).SendAsync(Target, message);
+                    return _hubContext.Clients.Group(groupName).SendAsync(Target, "publisher", message);
                 case "groups":
                     var groupNames = receiver.Split(',');
-                    return _hubContext.Clients.Groups(groupNames).SendAsync(Target, message);
+                    return _hubContext.Clients.Groups(groupNames).SendAsync(Target, "publisher", message);
                 default:
                     Console.WriteLine($"Can't recognize command {command}");
                     return Task.CompletedTask;
