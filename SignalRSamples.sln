@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_SignalRSelfFrame", "NetFramework\SignalRSelfFrame\01_SignalRSelfFrame.csproj", "{095829AF-93A7-4D18-81FA-E8860E63BF47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_AspFxSignalRHub", "01_AspFxSignalRHub\SignalRSelfFrame\01_AspFxSignalRHub.csproj", "{095829AF-93A7-4D18-81FA-E8860E63BF47}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_SignalRSelfCore", "NetCore\02_SignalRSelfCore.csproj", "{669D62B4-FC4F-4178-85E5-5D29CB906428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_AspCoreSignalRHub", "02_AspCoreSignalRHub\02_AspCoreSignalRHub.csproj", "{669D62B4-FC4F-4178-85E5-5D29CB906428}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_AzureSignalR_Default", "AzureSignalR\03_AzureSignalR_Default.csproj", "{A563E9AE-AA4F-49E4-A164-A473053B6A09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_ASRSAspCoreSignalR", "04_ASRSAspCoreSignalR\04_ASRSAspCoreSignalR.csproj", "{A563E9AE-AA4F-49E4-A164-A473053B6A09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_ServerlessSignalR", "ServerlessSignalR\csharp\04_ServerlessSignalR.csproj", "{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_ASRS_ServerlessSignalR", "05_ASRS_ServerlessSignalR\csharp\05_ASRS_ServerlessSignalR.csproj", "{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_MessagePublisher", "ManagementSDK\05_MessagePublisher.csproj", "{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_ASRSAspFxSignalRHub", "06_ASRS_ManagementSDK\03_ASRSAspFxSignalRHub.csproj", "{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_01AspNetCoreNetSignalRClient", "02_01AspNetCoreNetSignalRClient\02_01AspNetCoreNetSignalRClient.csproj", "{035CB8A1-B5A8-4C39-9B34-8BFB0AA9FB8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_01_NetCoreClientAspCoreSignalR", "02_01_NetCoreClientAspCoreSignalR\02_01_NetCoreClientAspCoreSignalR.csproj", "{035CB8A1-B5A8-4C39-9B34-8BFB0AA9FB8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_ASRSFrame", "ASRSFrame\ASRSFrame\06_ASRSFrame.csproj", "{E5C09AFA-1CB1-4E32-8801-37C4101C41D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_ASRSFrame", "03_ASRSAspFxSignalRHub\ASRSFrame\06_ASRSFrame.csproj", "{E5C09AFA-1CB1-4E32-8801-37C4101C41D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_01_NetFrameClientCoreSignalR", "NetFrameClientCoreSignalR\02_01_NetFrameClientCoreSignalR.csproj", "{B9F941B4-8EE3-4F17-A653-C5237ECC3810}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_02_NetFxClientClientAspCoreSignalR", "02_02_NetFxClientClientAspCoreSignalR\02_02_NetFxClientClientAspCoreSignalR.csproj", "{B9F941B4-8EE3-4F17-A653-C5237ECC3810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
