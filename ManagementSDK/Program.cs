@@ -92,6 +92,11 @@ namespace Microsoft.Azure.SignalR.Samples.Management
                         await publisher.SendMessages(args[1], args[2], args[3]);
                         Console.WriteLine($"{args[0]} message '{args[3]}' to '{args[2]}'");
                     }
+                    if (args.Length == 2 && args[0].Equals("slowlient"))
+                    {
+                        await publisher.SlowClient(args[1]);
+                        Console.WriteLine($"slowlient '{args[1]}'");
+                    }
                     else if (args.Length == 4 && args[0] == "usergroup")
                     {
                         await publisher.ManageUserGroup(args[1], args[2], args[3]);

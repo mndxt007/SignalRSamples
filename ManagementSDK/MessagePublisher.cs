@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Azure.SignalR.Management;
@@ -9,10 +10,24 @@ using Microsoft.Extensions.Logging;
 
 namespace Microsoft.Azure.SignalR.Samples.Management
 {
+    class NewMessage
+    {
+        public string ConnectionId { get; }
+        public string Sender { get; }
+        public string Text { get; }
+
+        public NewMessage(string message)
+        {
+            Sender = "publisher";
+            ConnectionId = "Dkfdggnmgmfg";
+            Text = message;
+        }
+    }
     public class MessagePublisher
     {
         private const string Target = "broadcastMessage";
-        private const string HubName = "chathub";
+        private const string message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+        private const string HubName = "simplechat";
         private readonly string _connectionString;
         private readonly ServiceTransportType _serviceTransportType;
         private ServiceHubContext _hubContext;
@@ -73,6 +88,16 @@ namespace Microsoft.Azure.SignalR.Samples.Management
                     Console.WriteLine($"Can't recognize command {command}");
                     return Task.CompletedTask;
             }
+        }
+
+        public async Task SlowClient(string connectionId)
+        {
+            var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = 50 };
+
+            await Parallel.ForEachAsync(Enumerable.Range(0, 1000), parallelOptions, async (i, token) =>
+            {
+                await _hubContext.Clients.All.SendAsync("newMessage", new NewMessage(message));
+            });
         }
 
         public Task CloseConnection(string connectionId, string reason)
