@@ -2,19 +2,23 @@
 
 This is a chatroom sample that demonstrates bidirectional message pushing between Azure SignalR Service and Azure Function in serverless scenario. It leverages the [**upstream**](https://docs.microsoft.com/azure/azure-signalr/concept-upstream) provided by Azure SignalR Service that features proxying messages from client to upstream endpoints in serverless scenario. Azure Functions with SignalR trigger binding allows you to write code to receive and push messages in several languages, including JavaScript, Python, C#, etc.
 
-- [Prerequisites](#prerequisites)
-- [Run sample in Azure](#run-sample-in-azure)
-- [Use Key Vault secret reference](#use-key-vault-secret-reference)
-- [Enable AAD Token on upstream](#enable-aad-token-on-upstream)
+- [Azure function bidirectional chatroom sample](#azure-function-bidirectional-chatroom-sample)
+  - [Prerequisites](#prerequisites)
+  - [Run sample in Azure](#run-sample-in-azure)
+    - [Create Azure SignalR Service](#create-azure-signalr-service)
+    - [Deploy project to Azure Function](#deploy-project-to-azure-function)
+    - [Use a chat sample website to test end to end](#use-a-chat-sample-website-to-test-end-to-end)
+  - [Use Key Vault secret reference](#use-key-vault-secret-reference)
+  - [Enable AAD Token on upstream](#enable-aad-token-on-upstream)
 
 <a name="prerequisites"></a>
 
 ## Prerequisites
 
 The following softwares are required to build this tutorial.
-* [.NET SDK](https://dotnet.microsoft.com/download) (Version 3.1, required for Functions extensions)
-* [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools) (Version 3)
-* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [.NET SDK](https://dotnet.microsoft.com/download) (Version 6.0, required for Functions extensions)
+* [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools) (Version 4)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 <a name="run-sample-in-azure"></a>
 
@@ -30,7 +34,7 @@ It's a quick try of this sample. You will create an Azure SignalR Service and an
     resourceGroup=myResourceGroup
     signalrName=mySignalRName
     region=eastus
-    
+
     # Create a resource group.
     az group create --name $resourceGroup --location $region
 
@@ -67,13 +71,13 @@ It's a quick try of this sample. You will create an Azure SignalR Service and an
         --storage-account $storageName \
         --consumption-plan-location $region \
         --resource-group $resourceGroup \
-        --functions-version 3
+        --functions-version 4
         ```
 
     3. Publish the sample to the Azure Function you created before.
 
         ```bash
-        cd <root>/samples/BidirectionChat/csharp
+        cd <root>/samples/DotnetIsolated-BidirectionChat
         // If prompted function app version, use --force
         func azure functionapp publish $functionAppName
         ```
@@ -86,23 +90,23 @@ It's a quick try of this sample. You will create an Azure SignalR Service and an
 
 3. Update Azure SignalR Service Upstream settings
 
-    Open the Azure Portal and navigate to the Function App created before. Find `signalr_extension` key in the **App keys** blade.
+    Open the Azure Portal and nevigate to the Function App created before. Find `signalr_extension` key in the **App keys** blade.
 
-    ![Overview with auth](getkeys.png)
+    ![Overview with auth](imgs/getkeys.png)
 
     Copy the `signalr_extensions` value and use Azure Portal to set the upstream setting.
     - In the *Upstream URL Pattern*, fill in the `<function-url>/runtime/webhooks/signalr?code=<signalr_extension-key>`
         > [!NOTE]
         > The `signalr_extensions` code is required by Azure Function but the trigger does not only use this code but also Azure SignalR Service connection string to validate requests. If you're very serious about the code, use KeyVault secret reference feature to save the code. See [Use Key Vault secret reference](#use-keyvault-secret-reference).
 
-        ![Upstream](upstream-portal.png)
+        ![Upstream](imgs/upstream-portal.png)
 
 ### Use a chat sample website to test end to end
 
 1. Use browser to visit `<function-app-url>/api/index` for the web page of the demo.
 
 2. Try send messages by entering them into the main chat box.
-    ![Chatroom](chatroom-noauth.png)
+    ![Chatroom](imgs/chatroom-noauth.png)
 
 ## Use Key Vault secret reference
 
@@ -116,7 +120,7 @@ The following steps demonstrate how to use Key Vault secret reference to save `s
 
         Open portal and navigate to **Identity**, and switch to **System assigned** page. Switch **Status** to **On**.
 
-        ![SystemAssignedIdentity](system-assigned-identity.png)
+        ![SystemAssignedIdentity](imgs/system-assigned-identity.png)
 
 2. Create a Key Vault instance.
 
@@ -144,7 +148,7 @@ The following steps demonstrate how to use Key Vault secret reference to save `s
 
 6. Update **Upstream URL Pattern** with Key Vault reference. You need to follow the syntax `{@Microsoft.KeyVault(SecretUri=<secret-identity>)}`. As shown below:
 
-    ![KeyVaultReference](key-vault-reference.png)
+    ![KeyVaultReference](imgs/key-vault-reference.png)
 
 ## Enable AAD Token on upstream
 
@@ -153,11 +157,11 @@ You can set **ManagedIdentity** as the **Auth** setting in upstream. After that,
 1. Make sure you have enabled managed identity.
 
 2. Click the asterisk in *Hub Rules* and a new page pops out as shown below.
-    ![Upstream details](upstream-details-portal.png)
+    ![Upstream details](imgs/upstream-details-portal.png)
 
 3. Select *Use Managed Identity* under *Upstream Authentication* and *Use default value* under *Auth Resource ID*.
 
 4. Use browser to visit `<function-app-url>/api/index` for the web page of the demo
 
 5. Try send messages by entering them into the main chat box. You can verify the `Authorization` has set from the `with Authorization: true`
-    ![Chatroom](chatroom.png)
+    ![Chatroom](imgs/chatroom.png)

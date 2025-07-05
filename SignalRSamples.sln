@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_AspCoreSignalRHub", "02_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_ASRSAspCoreSignalR", "04_ASRSAspCoreSignalR\04_ASRSAspCoreSignalR.csproj", "{A563E9AE-AA4F-49E4-A164-A473053B6A09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_ASRS_ServerlessSignalR", "05_ASRS_ServerlessSignalR\csharp\05_ASRS_ServerlessSignalR.csproj", "{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_ASRS_ManagmentSDK", "06_ASRS_ManagementSDK\06_ASRS_ManagmentSDK.csproj", "{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_ASRSAspFxSignalRHub", "06_ASRS_ManagementSDK\03_ASRSAspFxSignalRHub.csproj", "{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_01_NetCoreClientAspCoreSignalR", "02_01_NetCoreClientAspCoreSignalR\02_01_NetCoreClientAspCoreSignalR.csproj", "{035CB8A1-B5A8-4C39-9B34-8BFB0AA9FB8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_ASRSAspFxSignalRHub", "03_ASRSAspFxSignalRHub\ASRSFrame\03_ASRSAspFxSignalRHub.csproj", "{E5C09AFA-1CB1-4E32-8801-37C4101C41D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_02_NetFxClientClientAspCoreSignalR", "02_02_NetFxClientClientAspCoreSignalR\02_02_NetFxClientClientAspCoreSignalR.csproj", "{B9F941B4-8EE3-4F17-A653-C5237ECC3810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_ASRS_ServerlessSignalR", "05_ASRS_ServerlessSignalR\05_ASRS_ServerlessSignalR.csproj", "{CCCD8832-3FD4-C4FA-2F09-968BAE3BAFB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A563E9AE-AA4F-49E4-A164-A473053B6A09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E96CE102-03C7-4EC0-8C50-8CE94362CCA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1CDF72C-B0D6-4C13-94F0-4CFCDE5CDF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{B9F941B4-8EE3-4F17-A653-C5237ECC3810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9F941B4-8EE3-4F17-A653-C5237ECC3810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9F941B4-8EE3-4F17-A653-C5237ECC3810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCD8832-3FD4-C4FA-2F09-968BAE3BAFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCD8832-3FD4-C4FA-2F09-968BAE3BAFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCD8832-3FD4-C4FA-2F09-968BAE3BAFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCD8832-3FD4-C4FA-2F09-968BAE3BAFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
