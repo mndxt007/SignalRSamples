@@ -3,6 +3,6 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "AzureSignalRConnectionString": ""
+    "AzureSignalRConnectionString": "Endpoint=https://serverlesstest1996.service.signalr.net;AccessKey=BM7Z2qEr7lNLJEgvMTn2Z1Em48yTTdeyBik6Do037sE7xYi2kjKBJQQJ99BBAC1i4TkXJ3w3AAAAASRSvTAj;Version=1.0;"
   }
 }
